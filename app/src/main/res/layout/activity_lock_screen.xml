@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,15 +9,54 @@
     android:theme="@style/ThemeOverlay.Brew.FullscreenContainer"
     tools:context=".ui.LockScreenActivity">
 
-    <TextView
-        android:id="@+id/charging_status_text_view"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="Brew"
-        android:textColor="?attr/fullscreenTextColor"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/sf_ultra_light"
+            android:keepScreenOn="true"
+            android:text="16:11"
+            android:textAlignment="textStart"
+            android:textColor="?attr/fullscreenTextColor"
+            android:textSize="72sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans"
+            android:keepScreenOn="true"
+            android:text="Mon 6 June"
+            android:textAlignment="textStart"
+            android:textColor="?attr/fullscreenTextColor"
+            android:textSize="21sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time_text_view" />
+
+        <TextView
+            android:id="@+id/charging_status_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="Charging 100%"
+            android:textColor="?attr/fullscreenTextColor"
+            android:textSize="18sp"
+            android:fontFamily="@font/nunito_sans_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
