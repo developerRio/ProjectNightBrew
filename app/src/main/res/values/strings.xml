@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Brew</string>
+    <string name="title_activity_lock_screen">LockScreenActivity</string>
+</resources>
