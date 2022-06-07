@@ -10,7 +10,9 @@ import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.liveData
+import com.originalstocks.brew.R
 import com.originalstocks.brew.databinding.ActivityLockScreenBinding
 import java.text.SimpleDateFormat
 import java.util.*
@@ -38,6 +40,9 @@ class LockScreenActivity : AppCompatActivity() {
 
         /** setting views */
 
+        // animation
+        binding.lottieAnimationView.setAnimation(R.raw.rim_three)
+
         val currentTime = liveData {
             while (true) {
                 emit(Calendar.getInstance().time)
@@ -45,11 +50,9 @@ class LockScreenActivity : AppCompatActivity() {
             }
         }
 
-
         currentTime.observe(this) {time ->
             val formatDate: String = SimpleDateFormat("EEEE dd MMM", Locale.ENGLISH).format(time)
             val formatTime: String = SimpleDateFormat("HH:mm", Locale.ENGLISH).format(time)
-            Log.e(TAG, "currentTime_observe = $formatDate \n time : $formatTime\n battery: ${getBatteryLevels(this)}")
             binding.timeTextView.text = formatTime
             binding.dateTextView.text = formatDate
             if (getBatteryLevels(this).toString().contains("100.0")) {

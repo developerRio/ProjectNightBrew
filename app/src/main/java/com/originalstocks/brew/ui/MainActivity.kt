@@ -6,7 +6,6 @@ import android.content.ComponentName
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.originalstocks.brew.data.job.ChargingJobScheduler
 import com.originalstocks.brew.databinding.ActivityMainBinding
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         /* By Job Scheduler */
         val jobScheduler = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler

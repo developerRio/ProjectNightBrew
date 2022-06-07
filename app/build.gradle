@@ -61,4 +61,7 @@ dependencies {
     // lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
 
+    //lottie
+    def lottieVersion = "5.2.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
